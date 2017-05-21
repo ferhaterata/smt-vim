@@ -4,7 +4,7 @@ endif
 
 function! SmtVimCompileAndRunFile()
     silent !clear
-    silent !cd " . expand('%:p:h') 
+    execute "!cd " . expand('%:p:h') 
     execute "!" . g:smtvim_solver_command . " " . bufname("%")
 endfunction
 
