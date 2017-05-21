@@ -4,7 +4,8 @@ elseif exists("b:current_syntax")
   finish
 endif
 
-syn keyword smtResults sat unsat unknown
+syn keyword smtError error
+syn keyword smtResults sat unsat unknown model
 syn keyword smtSetters set-option set-logic
 syn keyword smtKeywords assert echo check-sat get-proof get-model get-unsat-core get-value declare-sort define-sort declare-const declare-fun define-fun declare-rel declare-datatypes exit
 syn region smtString start=+"+ skip=+\\\\\|\\"+ end=+"+
@@ -19,6 +20,7 @@ syn match smtOperators "[!$%&\*\+/<=>\?@\\^|~]\+\|\<[_-]\>"
 syn keyword smtStatements forall exists ite and or not iff distinct as
 
 "Keyword Funtion Normal Underlined Error Todo
+highlight def link smtError Error
 highlight def link smtResults Todo
 highlight def link smtSetters Include
 highlight! def link smtKeywords Function
