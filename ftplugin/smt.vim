@@ -1,3 +1,7 @@
+if exists('SmtVim*')
+    finish
+endif
+
 if !exists("g:smtvim_solver_command")
     let g:smtvim_solver_command = "z3"
 endif
