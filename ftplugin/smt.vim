@@ -1,7 +1,3 @@
-if exists('SmtVim*')
-    finish
-endif
-
 if !exists("g:smtvim_solver_command")
     let g:smtvim_solver_command = "z3"
 endif
@@ -11,6 +7,10 @@ function! SmtVimCompileAndRunFile()
     execute "!cd " . expand('%:p:h') 
     execute "!" . g:smtvim_solver_command . " " . bufname("%")
 endfunction
+
+if exists('*SmtVimShowResult')
+    finish
+endif
 
 function! SmtVimShowResult()
     " Get the result.
