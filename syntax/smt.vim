@@ -16,7 +16,7 @@ syn match smtFloat "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 syn match smtOperators "[!$%&\*\+/<=>\?@\\^|~]\+\|\<[_-]\>"
 syn keyword smtStatements ite and or not iff distinct as
 
-highlight def link smtKeywords Include
+highlight def link smtKeywords Keyword "Include
 highlight def link smtString String
 highlight def link smtSort Type
 highlight def link smtDelimiter Delimiter
