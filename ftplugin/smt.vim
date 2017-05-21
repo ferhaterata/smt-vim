@@ -16,7 +16,7 @@ function! SmtVimShowResult()
     " Get the result.
     let result = system("cd " . expand('%:p:h') . ";" . g:smtvim_solver_command . " " . bufname("%"))
     
-    let buffername = _SMT_Solver_Results_ 
+    let buffername = '_SMT_Solver_Results_' 
     
     let bnr = bufwinnr(buffername)
     
