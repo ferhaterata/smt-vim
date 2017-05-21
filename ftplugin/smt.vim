@@ -10,7 +10,7 @@ endfunction
 
 function! SmtVimShowResult()
     " Get the result.
-    let result = system(g:smtvim_solver_command . " " . bufname("%"))
+    let result = system("cd " . expand('%:p:h') . ";" . g:smtvim_solver_command . " " . bufname("%"))
 
     " Open a new split and set it up.
     vsplit __SMT_Solver_Results__
