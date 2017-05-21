@@ -5,7 +5,7 @@ elseif exists("b:current_syntax")
 endif
 
 syn keyword smtSetters set-option set-logic
-syn keyword smtKeywords assert echo check-sat get-proof get-model get-unsat-core get-value declare-sort define-sort declare-const declare-fun define-fun declare-rel  declare-datatypes forall exit
+syn keyword smtKeywords assert echo check-sat get-proof get-model get-unsat-core get-value declare-sort define-sort declare-const declare-fun define-fun declare-rel  declare-datatypes exit
 syn region smtString start=+"+ skip=+\\\\\|\\"+ end=+"+
 syn match smtSort "\<[A-Z][a-zA-Z0-9_']*\>"
 syn match smtDelimiter  "[()]"
@@ -15,7 +15,7 @@ syn match smtLabel "\<:[a-zA-z]\S*\>"
 syn match smtNumber "\<[1-9][0-9]*\>\|\<#x[0-9a-f]*\>\|\<#b[01]*\>"
 syn match smtFloat "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 syn match smtOperators "[!$%&\*\+/<=>\?@\\^|~]\+\|\<[_-]\>"
-syn keyword smtStatements ite and or not iff distinct as
+syn keyword smtStatements forall exists ite and or not iff distinct as
 
 "Keyword Funtion Normal Underlined Error Todo
 highlight def link smtSetters Include
