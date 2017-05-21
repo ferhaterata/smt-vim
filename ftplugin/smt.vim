@@ -15,9 +15,19 @@ endif
 function! SmtVimShowResult()
     " Get the result.
     let result = system("cd " . expand('%:p:h') . ";" . g:smtvim_solver_command . " " . bufname("%"))
-
-    " Open a new split and set it up.
-    vsplit __SMT_Solver_Results__
+    
+    let buffername = _SMT_Solver_Results_ 
+    
+    let bnr = bufwinnr(a:buffername)
+    
+    if bnr > 0
+       :exe bnr . "wincmd w"
+    else
+       " Buffer is not existent'
+       " Open a new split and set it up.
+       silent execute 'vsplit ' . buffername
+    endif
+    
     normal! ggdG
     setlocal filetype=smt
     setlocal buftype=nofile
