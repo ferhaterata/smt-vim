@@ -9,15 +9,16 @@ function! SmtVimCompileAndRunFile()
 endfunction
 
 "nnoremap <buffer> <localleader>r :call SmtVimCompileAndRunFile()<cr>
-nnoremap <buffer> <localleader>r :call SmtVimShowResult()<cr>
+nnoremap <buffer> <localleader>r :call SmtVimShowResult('')<cr>
+nnoremap <buffer> <localleader>rs :call SmtVimShowResult('-st')<cr>
 
 if exists('*SmtVimShowResult')
     finish
 endif
 
-function! SmtVimShowResult()
+function! SmtVimShowResult(args)
     " Get the result.
-    let result = system("cd " . expand('%:p:h') . ";" . g:smtvim_solver_command . " " . bufname("%"))
+    let result = system("cd " . expand('%:p:h') . ";" . g:smtvim_solver_command . " " . bufname("%") . " " . a:args)
     
     let buffername = '_SMT_Solver_Results_' 
     
