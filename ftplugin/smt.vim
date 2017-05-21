@@ -38,4 +38,6 @@ function! SmtVimShowResult()
 
     " Insert the bytecode.
     call append(0, split(result, '\v\n'))
+    normal! gg
+    
 endfunction
