@@ -4,7 +4,8 @@ elseif exists("b:current_syntax")
   finish
 endif
 
-syn keyword smtKeywords assert echo check-sat get-proof get-model get-unsat-core get-value declare-sort define-sort declare-const declare-fun define-fun declare-rel set-logic declare-datatypes set-option forall exit
+syn keyword smtSetters set-option set-logic
+syn keyword smtKeywords assert echo check-sat get-proof get-model get-unsat-core get-value declare-sort define-sort declare-const declare-fun define-fun declare-rel  declare-datatypes forall exit
 syn region smtString start=+"+ skip=+\\\\\|\\"+ end=+"+
 syn match smtSort "\<[A-Z][a-zA-Z0-9_']*\>"
 syn match smtDelimiter  "[()]"
@@ -16,7 +17,9 @@ syn match smtFloat "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 syn match smtOperators "[!$%&\*\+/<=>\?@\\^|~]\+\|\<[_-]\>"
 syn keyword smtStatements ite and or not iff distinct as
 
-highlight def link smtKeywords Keyword "Include
+"Keyword 
+highlight def link smtSetters Include
+highlight def link smtKeywords Funtion
 highlight def link smtString String
 highlight def link smtSort Type
 highlight def link smtDelimiter Delimiter
