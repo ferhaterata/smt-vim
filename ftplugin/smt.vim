@@ -8,6 +8,9 @@ function! SmtVimCompileAndRunFile()
     execute "!" . g:smtvim_solver_command . " " . bufname("%")
 endfunction
 
+"nnoremap <buffer> <localleader>r :call SmtVimCompileAndRunFile()<cr>
+nnoremap <buffer> <localleader>r :call SmtVimShowResult()<cr>
+
 if exists('*SmtVimShowResult')
     finish
 endif
@@ -36,6 +39,3 @@ function! SmtVimShowResult()
     " Insert the bytecode.
     call append(0, split(result, '\v\n'))
 endfunction
-
-"nnoremap <buffer> <localleader>r :call SmtVimCompileAndRunFile()<cr>
-nnoremap <buffer> <localleader>r :call SmtVimShowResult()<cr>
