@@ -19,7 +19,7 @@ syn keyword smtStatements ite and or not iff distinct as
 
 "Keyword 
 highlight def link smtSetters Include
-highlight def link smtKeywords Funtion
+highlight link smtKeywords Funtion
 highlight def link smtString String
 highlight def link smtSort Type
 highlight def link smtDelimiter Delimiter
