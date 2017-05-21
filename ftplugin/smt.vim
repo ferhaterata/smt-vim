@@ -18,7 +18,7 @@ function! SmtVimShowResult()
     
     let buffername = _SMT_Solver_Results_ 
     
-    let bnr = bufwinnr(a:buffername)
+    let bnr = bufwinnr(buffername)
     
     if bnr > 0
        :exe bnr . "wincmd w"
