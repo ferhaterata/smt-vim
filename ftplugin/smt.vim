@@ -22,6 +22,7 @@ function! SmtVimShowResult()
     
     if bnr > 0
        :exe bnr . "wincmd w"
+       echo 'jumped to the buffer'
     else
        " Buffer is not existent'
        " Open a new split and set it up.
