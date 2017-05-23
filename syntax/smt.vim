@@ -6,7 +6,7 @@ endif
 
 syn keyword smtError error
 syn keyword smtResults sat unsat unknown model
-syn keyword smtSetters set-option set-logic
+syn keyword smtSetters set-option set-logic set-info
 syn keyword smtKeywords assert echo check-sat get-proof get-model get-unsat-core get-value declare-sort define-sort declare-const declare-fun define-fun declare-rel declare-datatypes exit
 syn region smtString start=+"+ skip=+\\\\\|\\"+ end=+"+
 syn match smtSort "\<[A-Z][a-zA-Z0-9_']*\>"
