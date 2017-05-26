@@ -31,6 +31,9 @@ function! SmtVimShowResult(args)
        " Buffer is not existent'
        " Open a new split and set it up.
        silent execute 'vsplit ' . buffername
+       let bnr = bufwinnr(buffername)
+       " Decrease the window size by 0.67
+       silent execute 'vertical resize ' . (winwidth(bnr) * 2/3)
     endif
     
     normal! ggdG
